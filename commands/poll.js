@@ -3,10 +3,8 @@ const Discord = require("discord.js")
 module.exports = {
 	name: 'poll',
 	description: 'Creates a poll with the provided arguments.',
+  security: "Mod",
   async execute (message) {
-    if (!message.guild) {
-      return;
-    }
         const messageArray = message.content.split(" ");
         const cmd = messageArray[0];
         const args = messageArray.slice(1);
@@ -27,7 +25,7 @@ module.exports = {
             let msgEmbed = await message.channel.send(embedPoll);
             await msgEmbed.react("👍");
             await msgEmbed.react("👎");
-            message.delete(1000);
+            message.delete();
             return;
           }
 
@@ -46,6 +44,6 @@ module.exports = {
           let msgEmbed = await pollChannel.send(embedPoll);
           await msgEmbed.react("👍");
           await msgEmbed.react("👎");
-          message.delete(1000);
-        }
+          message.delete();
+      }
     }

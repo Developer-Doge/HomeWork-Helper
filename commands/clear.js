@@ -1,6 +1,7 @@
       module.exports = {
         name: 'clear',
         description: 'Clears Messages of Argumented Amount',
+        security: "Mod",
         execute(message) {
             const messageArray = message.content.split(" ");
             const args = messageArray.slice(1);

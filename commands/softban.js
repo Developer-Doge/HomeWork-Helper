@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'softban',
 	description: 'Kicks a user but deletes all their messages.',
+  security: "Mod",
 	execute(message) {
 		// Assuming we mention someone in the message, this will return the user
       // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
@@ -43,6 +44,6 @@ module.exports = {
       } else {
         // Otherwise, if no user was mentioned
         message.reply("You didn't mention the user to soft-ban!");
-      }
+    }
 	},
 };
