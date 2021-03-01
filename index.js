@@ -127,4 +127,5 @@ client.on("guildMemberAdd", member => {
     .catch(console.error);
 });
 
+//logs in
 client.login(token);
