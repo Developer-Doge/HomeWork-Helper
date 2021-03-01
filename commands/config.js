@@ -2,8 +2,8 @@
     module.exports = {
       name: 'config',
       description: 'Shows server configuration.',
-      security: "Owner",
-      execute(message, args, prefix, client, token) {
+      security: 'Owner',
+      execute(message, args, prefix, client) {
         const guildConf = client.settings.get(message.guild.id);
         let configProps = Object.keys(guildConf).map(prop => {
           return `${prop}  :  ${guildConf[prop]}`;

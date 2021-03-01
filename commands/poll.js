@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
 	name: 'poll',
 	description: 'Creates a poll with the provided arguments.',
-  security: "Mod",
+  security: 'Mod',
   async execute (message) {
         const messageArray = message.content.split(" ");
         const cmd = messageArray[0];

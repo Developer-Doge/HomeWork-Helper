@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'setup',
 	description: 'Runs server setup!',
-    security: 'Owner',
+  security: 'Owner',
 	execute(message, args, prefix, client, token) {
 		// Command is admin only, let's grab the admin value: 
         const guildConf = client.settings.get(message.guild.id);

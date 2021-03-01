@@ -45,33 +45,36 @@ client.on("message", async message => {
       const guildConf = client.settings.get(message.guild.id);
       if (!message.content.startsWith(guildConf.prefix) || message.author.bot) return;
 	       const args = message.content.slice(prefix.length).trim().split(/ +/);
-	       const command = args.shift().toLowerCase();
-
-         if (!client.commands.has(command)) return;
-
-         if (client.commands.get(command.security) === "Mod") {
-          if (!message.guild.roles.cache.find(role => role.name === guildConf.modRole)) {
+	       const cmd = args.shift().toLowerCase();
+         const command = client.commands.get(cmd);
+         if (!client.commands.has(cmd)) return;
+          console.log(command)
+         if (command.security === 'Mod') {
+           console.log(command.security)
+          if (!message.member.roles.cache.some(r=>[guildConf.adminRole, guildConf.modRole].includes(r.name))) {
             message.reply('Insufficient Permissions')
             return;
          }
         }
 
-         if (client.commands.get(command.security) === "Admin") {
-          if (!message.guild.roles.cache.find(role => role.name === guildConf.adminRole)) {
+         if (command.security === 'Admin') {
+          console.log(command.security)
+          if (!message.member.roles.cache.some(r=>[guildConf.adminRole].includes(r.name))) {
             message.reply('Insufficient Permissions')
             return;
          }
         }
 
-         if (client.commands.get(command.security) === "Owner") {
-          if (!message.author == message.guild.owner) {
+        if (command.security === 'Owner') {
+          console.log(command.security)
+          if (!message.member.hasPermission('ADMINISTRATOR')) {
             message.reply('Insufficient Permissions')
             return;
          }
         }
 
         try {
-	      client.commands.get(command).execute(message, args, prefix, client, token);
+	      command.execute(message, args, prefix, client, token);
 }       catch (error) {
 	      console.error(error);
 	      message.reply('there was an error trying to execute that command!');

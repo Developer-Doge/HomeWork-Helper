@@ -1,8 +1,8 @@
 module.exports = {
 	name: 'ping',
 	description: 'Ping!',
-    security: "Owner",
-	execute(message, args) {
+    security: 'Owner',
+	execute(message, args, prefix, client) {
 		message.channel.send('Pong.');
 	},
 };

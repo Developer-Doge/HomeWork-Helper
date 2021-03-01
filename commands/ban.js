@@ -1,10 +1,9 @@
 module.exports = {
 	name: 'ban',
 	description: 'Bans argumented user',
-  security: "Admin",
+  security: 'Admin',
 	execute(message) {
 		// Assuming we mention someone in the message, this will return the user
-      // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
       const user = message.mentions.users.first();
       // If we have a user mentioned
       if (user) {
@@ -15,9 +14,6 @@ module.exports = {
           /**
            * Ban the member
            * Make sure you run this on a member, not a user!
-           * There are big differences between a user and a member
-           * Read more about what ban options there are over at
-           * https://discord.js.org/#/docs/main/master/class/GuildMember?scrollTo=ban
            */
           member
             .ban({
