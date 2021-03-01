@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
 	name: 'meme',
 	description: 'Selects a random meme',
-        security: "None",
+        security: 'None',
 	async execute(message, args) {
 try {
 

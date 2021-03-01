@@ -1,0 +1,8 @@
+data/enmap.sqlite-shm
+data/enmap.sqlite
+data/enmap.sqlite-wal
+data/enmap.sqlite-shm
+data/enmap.sqlite-shm
+*.sqlite-shm
+*.sqlite
+*.sqlite-wal

@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
 	name: 'leaderboard',
 	description: "Displays guilds point's leaderboard.",
-  security: "None",
+  security: 'None',
 	execute(message, args, prefix, client, token) {
 		// Get a filtered list (for this guild only), and convert to an array while we're at it.
     const filtered = client.points.filter( p => p.guild === message.guild.id ).array();

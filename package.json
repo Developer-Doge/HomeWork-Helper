@@ -1,6 +1,6 @@
 {
   "name": "homeworkbot",
-  "version": "0.0.5",
+  "version": "0.1.1B",
   "description": "A discord bot for homework",
   "main": "index.js",
   "scripts": {

@@ -3,9 +3,9 @@
 module.exports = {
 	name: 'give-points',
 	description: 'Gives points to person',
-  security: "Owner",
-	execute(message, args, prefix, client, token) {
-        const user = message.mentions.users.first() || client.users.get(args[0]);
+  security: 'Owner',
+	execute(message, args, prefix, client) {
+    const user = message.mentions.users.first() || client.users.get(args[0]);
     if(!user) return message.reply("You must mention someone or give their ID!");
 
     const pointsToAdd = parseInt(args[1], 10);

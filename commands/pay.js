@@ -3,7 +3,7 @@
 module.exports = {
 	name: 'pay',
 	description: 'Pays points to person',
-  security: "None",
+  security: 'None',
 	execute(message, args, prefix, client, token) {
     const user = message.mentions.users.first() || client.users.get(args[0]);
     const user2 = message.author

@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'kick',
 	description: 'Kicks agrumented user',
-  security: "Mod",
+  security: 'Mod',
 	execute(message) {
 		// Assuming we mention someone in the message, this will return the user
       // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
