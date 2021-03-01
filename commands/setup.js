@@ -19,7 +19,8 @@ module.exports = {
         if(!client.settings.has(message.guild.id, prop)) {
           return message.reply("This key is not in the configuration.");
         }
-    
+        if(!value) return message.reply("You little butt head, you tried to screw me over! Next time actually give me a value to set!")
+        if(!prop) return message.reply("You little butt head, you tried to screw me over! Next time actually give me a value to set!")
         // Now we can finally change the value. Here we only have strings for values 
         // so we won't bother trying to make sure it's the right type and such. 
         client.settings.set(message.guild.id, value.join(" "), prop);

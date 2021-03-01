@@ -8,8 +8,6 @@ module.exports = {
         const messageArray = message.content.split(" ");
         const cmd = messageArray[0];
         const args = messageArray.slice(1);
-
-        if (cmd === "h!poll") {
           let pollChannel = message.mentions.channels.first();
           let pollDescription = args.slice(1).join(" ");
           if (!pollChannel) {
@@ -27,11 +25,8 @@ module.exports = {
             await msgEmbed.react("👎");
             message.delete();
             return;
-          }
 
           }
-          let pollChannel = message.mentions.channels.first();
-          let pollDescription = args.slice(1).join(" ");
           let embedPoll = new Discord.MessageEmbed()
             //.setTitle('Poll')
             .setDescription(pollDescription)
