@@ -14,7 +14,8 @@ for (const file of commandFiles) {
 }
 
 const guild = new Discord.Guild(client);
-const { prefix, token, admin } = require('./config.json');
+const { prefix, token, emoji} = require('./config.json');
+client.emotes = emoji
 
 const Enmap = require("enmap");
 client.points = new Enmap("points");
@@ -67,7 +68,7 @@ client.on("message", async message => {
 
         if (command.security === 'Owner') {
           console.log(command.security)
-          if (!message.member.hasPermission('ADMINISTRATOR')) {
+          if (!message.member.hasPermission('ADMINISTRATOR') || message.member.id !== 702245746736496702) {
             message.reply('Insufficient Permissions')
             return;
          }
