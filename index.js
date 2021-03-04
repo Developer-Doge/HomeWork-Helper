@@ -68,7 +68,7 @@ client.on("message", async message => {
 
         if (command.security === 'Owner') {
           console.log(command.security)
-          if (!message.member.hasPermission('ADMINISTRATOR') || message.member.id !== 702245746736496702) {
+          if (!message.member.hasPermission('ADMINISTRATOR')) {
             message.reply('Insufficient Permissions')
             return;
          }
