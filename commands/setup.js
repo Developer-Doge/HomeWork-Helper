@@ -2,7 +2,7 @@ module.exports = {
 	name: 'setup',
 	description: 'Runs server setup!',
   security: 'Owner',
-	execute(message, args, prefix, client, token) {
+	execute(message, args, prefix, client) {
 		// Command is admin only, let's grab the admin value: 
         const guildConf = client.settings.get(message.guild.id);
         const adminRole = message.guild.roles.cache.find(role => role.name === guildConf.adminRole);

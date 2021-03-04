@@ -7,6 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@quick.eco/sqlite": "^1.0.4",
     "@types/node": "^14.14.31",
     "better-sqlite3": "^7.1.2",
     "discord-jokes": "^3.0.0",
@@ -14,7 +15,8 @@
     "enmap": "^5.8.4",
     "express": "^4.17.1",
     "got": "^11.8.2",
-    "node-gyp": "^7.1.2"
+    "node-gyp": "^7.1.2",
+    "quick.eco": "^6.0.0"
   },
   "engines": {
     "node": "12.x"

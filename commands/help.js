@@ -4,7 +4,7 @@ module.exports = {
 	name: 'help',
 	description: 'Displays availible commands.',
   security: 'None',
-	async execute(message, args, prefix, client, token) {
+	async execute(message) {
         let str = '';
 		const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 

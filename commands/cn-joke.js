@@ -4,9 +4,9 @@ module.exports = {
 	name: 'cn-joke',
 	description: 'Gets random chuck norris joke',
     security: 'None',
-	execute(message, args, prefix, client) {
+	execute(message) {
 		giveMeAJoke.getRandomCNJoke (function(joke) {
-            message.channel.send(`Dad: ${joke}`);
+            message.channel.send(`${joke}`);
         });
         
 	},
