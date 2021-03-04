@@ -6,3 +6,5 @@ data/enmap.sqlite-shm
 *.sqlite-shm
 *.sqlite
 *.sqlite-wal
+*.sqlite-wal
+*.sqlite-shm
