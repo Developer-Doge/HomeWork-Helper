@@ -6,7 +6,7 @@ module.exports = {
 		let search = await eco.search({
 			userId: message.author.id,
 			searchMoney: 50,
-			searchPlace: ["Park", "Toilet", "Closet", "Gas Tank", "Poop", "Pants", "Trump's Purse"]
+			searchPlace: ["Park", "Toilet", "Closet", "Gas Tank", "Poop", "Pants", "Trump's Purse", "Hair", "Shower", "Trash Can", "Droors", "Public Urinal", "Your Ear"]
 		  });
 		  message.channel.send(
 			`You have search in ${search.place} and got ${search.amount}$`

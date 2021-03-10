@@ -6,6 +6,7 @@
                 execute(message, args, prefix, client, eco) {
                     if (!args[0]) return message.channel.send("You forgot to mention someone!")
                     if (!args[1]) return message.channel.send("You need to mention someone else!")
+                    const randNum = Math.floor(Math.random()*100)
              
                     if (args[0] || args[1]) {
                         var FirstUser = message.mentions.members.first() || message.guild.members.cache.get(args[0])
@@ -19,7 +20,7 @@
                             const SecondUserSliced = SecondUser.map(user => { return user.user.username.slice(user.user.username.length / 2) })
                             const SecondUserName = SecondUser.map(user => { return user.user.username })
              
-                            message.channel.send(`${FirstUser.user.username} + ${SecondUserName} = **${FirstUserSliced}${SecondUserSliced}**`)
+                            message.channel.send(`${FirstUser.user.username} + ${SecondUserName} = **${FirstUserSliced}${SecondUserSliced}**, Compatibility = ${randNum}%`)
                         }
                     }
                 },

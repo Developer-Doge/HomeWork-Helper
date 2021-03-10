@@ -6,7 +6,7 @@ module.exports = {
 		let beg = await eco.beg({
 			userId: message.author.id,
 			begMoney: 99999999,
-			begPeople: ["Ricky Bobby", "Elon Musk", "Trump", "Joe Bidome", "Peppa Pig"]
+			begPeople: ["Ricky Bobby", "Elon Musk", "Trump", "Joe Bidome", "Peppa Pig", "Albert Dumbstein", "Bart Simpson"]
 		  });
 		  message.channel.send(`${beg.people} farted, Here take ${beg.amount}$ and be quiet`);
 	},
