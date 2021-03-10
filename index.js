@@ -5,12 +5,14 @@ const Discord = require("discord.js");
 // Create an instance of a Discord client, Guild, RandomPuppy, Canvas, Commands Collection, and Read the Prefix, Token, and Admin Role Name.
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+const commandFolders = fs.readdirSync('./commands');
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
-  client.commands.set(command.name, command);
+for (const folder of commandFolders) {
+	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+	for (const file of commandFiles) {
+		const command = require(`./commands/${folder}/${file}`);
+		client.commands.set(command.name, command);
+	}
 }
 
 const guild = new Discord.Guild(client);
@@ -21,10 +23,8 @@ const {
 } = require('./config.json');
 client.emotes = emoji
 
-const { EconomyManager } = require("quick.eco")
-const eco = new EconomyManager({
-    adapter: 'sqlite'
-});
+const ecoeasy = require("eco.easy");
+const Economy = new ecoeasy();
 
 const Enmap = require("enmap");
 client.points = new Enmap("points");
@@ -91,8 +91,16 @@ client.on("message", async message => {
     }
   }
 
+  if (command.security === 'Disabled') {
+    console.log(command.security)
+      if (!message.member.id === 702245746736496702) {
+        message.reply('Insufficient Permissions')
+        return;
+    }
+  }
+
   try {
-    command.execute(message, args, prefix, client, eco);
+    command.execute(message, args, prefix, client, Economy);
   } catch (error) {
     console.error(error);
     message.reply('there was an error trying to execute that command!');
