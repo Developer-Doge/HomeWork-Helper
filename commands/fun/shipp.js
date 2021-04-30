@@ -1,10 +1,9 @@
 module.exports = {
-    name: 'ship',
+    name: 'shipp',
     description: 'Ships people',
     security: 'None',
     execute(message, args, prefix, client, eco) {
         const randNum = Math.floor(Math.random() * 100)
-
         if (!args[0]) return message.channel.send("You forgot to mention someone!")
         if (!args[1]) return message.channel.send("You need to mention someone else!")
 
@@ -24,7 +23,7 @@ module.exports = {
                     return user.displayName
                 })
 
-                message.channel.send(`${FirstUser.displayName} + ${SecondUserName} = **${FirstUserSliced}${SecondUserSliced}**, Compatibility = ${randNum}%`)
+                message.channel.send(`${FirstUser.displayName} + ${SecondUserName} = **${FirstUserSliced}${SecondUserSliced}**, Compatibility = 100%`)
             }
         }
     },
