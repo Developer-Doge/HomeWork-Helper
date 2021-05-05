@@ -73,13 +73,13 @@ module.exports = {
         .addField(
           "SECURITY:",
           command.security
-            ? `\`${command.name} ${command.security}\``
+            ? `\`${command.security}\``
             : `\`${command.name}\``
         )
         .addField(
           "DESCRIPTION:",
           command.description
-            ? command.description
+            ? `\`${command.description}\``
             : "No description for this command."
         )
         .setFooter(
